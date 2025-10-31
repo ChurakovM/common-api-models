@@ -1,0 +1,68 @@
+components:
+  schemas:
+    UserName:
+      description: Username of a polyglot
+      type: string
+      minLength: 5
+      maxLength: 20
+    PolyglotID:
+      description: The identification of a polyglot
+      type: string
+      format: uuid
+    Email:
+      description: Email model
+      type: string
+      minLength: 5
+      maxLength: 100
+      format: email
+    Password:
+      description: Password model
+      type: string
+      minLength: 10
+      maxLength: 100
+      format: password
+    Language:
+      description: Language model with its code and name
+      type: object
+      properties:
+        code:
+          type: string
+          example: en
+        name:
+          type: string
+          example: English
+    Country:
+      description: Country model
+      type: string
+    City:
+      description: City model
+      type: string
+    Location:
+      description: Location model with its country and city
+      type: object
+      properties:
+        country:
+          $ref: "#/components/schemas/Country"
+        city:
+          $ref: "#/components/schemas/City"
+    PolyglotModel:
+      description: Common model of a polyglot with their basic information
+      type: object
+      properties:
+        polyglotId:
+          $ref: "#/components/schemas/PolyglotID"
+        username:
+          $ref: "#/components/schemas/UserName"
+        nativeLanguages:
+          type: array
+          items:
+            $ref: "#/components/schemas/Language"
+        learningLanguages:
+          type: array
+          items:
+            $ref: "#/components/schemas/Language"
+        fromLocation:
+          $ref: "#/components/schemas/Location"
+        currentlyInLocation:
+          $ref: "#/components/schemas/Location"
+
