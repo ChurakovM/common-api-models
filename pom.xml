@@ -6,7 +6,19 @@
 
     <groupId>com.polyglots</groupId>
     <artifactId>common-api-models</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1.0</version>
+    <packaging>pom</packaging>
+
+    <name>common-api-models</name>
+    <description>Common OpenAPI models for Polyglot services</description>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/ChurakovM/common-api-models</url>
+        </repository>
+    </distributionManagement>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
