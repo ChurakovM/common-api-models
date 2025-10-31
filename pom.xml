@@ -7,7 +7,7 @@
     <groupId>com.polyglots</groupId>
     <artifactId>common-api-models</artifactId>
     <version>0.1.0</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <name>common-api-models</name>
     <description>Common OpenAPI models for Polyglot services</description>
