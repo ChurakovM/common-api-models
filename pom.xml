@@ -6,7 +6,7 @@
 
     <groupId>com.polyglots</groupId>
     <artifactId>common-api-models</artifactId>
-    <version>0.2.0</version>
+    <version>0.1.0</version>
     <packaging>jar</packaging>
 
     <name>common-api-models</name>
@@ -25,5 +25,34 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <build>
+        <plugins>
+            <!-- Attach the YAML as a separate artifact -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-yaml</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>${project.basedir}/src/main/resources/common-api-models.yaml</file>
+                                    <type>yaml</type>
+                                    <classifier>openapi</classifier>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
